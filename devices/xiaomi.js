@@ -1028,11 +1028,6 @@ module.exports = [
         vendor: 'Xiaomi',
         description: 'Aqara smart wall switch (neutral, single rocker)',
         extend: extend.switch(),
-        configure: async (device, coordinatorEndpoint, logger) => {
-            const endpoint = device.getEndpoint(1);
-            await reporting.bind(endpoint, coordinatorEndpoint, ['genOnOff']);
-            await reporting.onOff(endpoint);
-        },
         ota: ota.zigbeeOTA,
     },
     {
